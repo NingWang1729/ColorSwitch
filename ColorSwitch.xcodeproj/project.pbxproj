@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		29B68F0626C62A1600A65658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B68F0526C62A1600A65658 /* AppDelegate.swift */; };
-		29B68F0826C62A1600A65658 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29B68F0726C62A1600A65658 /* GameScene.sks */; };
-		29B68F0A26C62A1600A65658 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29B68F0926C62A1600A65658 /* Actions.sks */; };
 		29B68F0C26C62A1600A65658 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B68F0B26C62A1600A65658 /* GameScene.swift */; };
 		29B68F0E26C62A1600A65658 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B68F0D26C62A1600A65658 /* GameViewController.swift */; };
 		29B68F1126C62A1600A65658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B68F0F26C62A1600A65658 /* Main.storyboard */; };
@@ -19,8 +17,6 @@
 /* Begin PBXFileReference section */
 		29B68F0226C62A1600A65658 /* ColorSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B68F0526C62A1600A65658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29B68F0726C62A1600A65658 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		29B68F0926C62A1600A65658 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		29B68F0B26C62A1600A65658 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		29B68F0D26C62A1600A65658 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		29B68F1026C62A1600A65658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,16 +54,46 @@
 		29B68F0426C62A1600A65658 /* ColorSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				29B68F0526C62A1600A65658 /* AppDelegate.swift */,
-				29B68F0726C62A1600A65658 /* GameScene.sks */,
-				29B68F0926C62A1600A65658 /* Actions.sks */,
-				29B68F0B26C62A1600A65658 /* GameScene.swift */,
-				29B68F0D26C62A1600A65658 /* GameViewController.swift */,
-				29B68F0F26C62A1600A65658 /* Main.storyboard */,
-				29B68F1226C62A1800A65658 /* Assets.xcassets */,
 				29B68F1426C62A1800A65658 /* Info.plist */,
+				29B68F1D26C62DF700A65658 /* Assets */,
+				29B68F1C26C62DE500A65658 /* Template */,
+				29B68F1B26C62DD300A65658 /* Scenes */,
+				29B68F1A26C62DBD00A65658 /* ViewController */,
 			);
 			path = ColorSwitch;
+			sourceTree = "<group>";
+		};
+		29B68F1A26C62DBD00A65658 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29B68F0D26C62A1600A65658 /* GameViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		29B68F1B26C62DD300A65658 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				29B68F0B26C62A1600A65658 /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		29B68F1C26C62DE500A65658 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				29B68F0526C62A1600A65658 /* AppDelegate.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		29B68F1D26C62DF700A65658 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				29B68F1226C62A1800A65658 /* Assets.xcassets */,
+				29B68F0F26C62A1600A65658 /* Main.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B68F1126C62A1600A65658 /* Main.storyboard in Resources */,
-				29B68F0826C62A1600A65658 /* GameScene.sks in Resources */,
 				29B68F1326C62A1800A65658 /* Assets.xcassets in Resources */,
-				29B68F0A26C62A1600A65658 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
