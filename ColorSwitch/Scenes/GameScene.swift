@@ -25,6 +25,9 @@ class GameScene: SKScene {
     var colorSwitch: SKSpriteNode!
     var switchState = SwitchState.red
     var currentColorIndex: Int?
+    
+    let scoreLabel = SKLabelNode(text: "0")
+    var score = 0
 
     override func didMove(to view: SKView) {
         setUpPhysics()
@@ -32,7 +35,7 @@ class GameScene: SKScene {
     }
     
     func setUpPhysics() {
-        physicsWorld.gravity = CGVector(dx: 0.0, dy: -2.0)
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: -1.0)
         physicsWorld.contactDelegate = self
     }
     
@@ -42,12 +45,24 @@ class GameScene: SKScene {
         colorSwitch = SKSpriteNode(imageNamed: "ColorCircle")
         colorSwitch.size = CGSize(width: frame.size.width / 3, height: frame.size.width / 3)
         colorSwitch.position = CGPoint(x: frame.midX, y: frame.minY + colorSwitch.size.height)
+        colorSwitch.zPosition = ZPositions.colorSwitch
         colorSwitch.physicsBody = SKPhysicsBody(circleOfRadius: colorSwitch.size.width / 2)
         colorSwitch.physicsBody?.categoryBitMask = PhysicsCategories.switchCategory
         colorSwitch.physicsBody?.isDynamic = false
         addChild(colorSwitch)
         
+        scoreLabel.fontSize = 24.0
+        scoreLabel.fontColor = UIColor.white
+        scoreLabel.position = CGPoint(x: frame.midX, y: frame.midY)
+        scoreLabel.zPosition = ZPositions.label
+        addChild(scoreLabel)
+        
         spawnBall()
+    }
+    
+    func updateScoreLabel() {
+        score += 1
+        scoreLabel.text = "\(score)"
     }
     
     func spawnBall() {
@@ -57,6 +72,7 @@ class GameScene: SKScene {
         ball.colorBlendFactor = 1.0
         ball.name = "Ball"
         ball.position = CGPoint(x: frame.midX, y: frame.maxY)
+        ball.zPosition = ZPositions.ball
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2)
         ball.physicsBody?.categoryBitMask = PhysicsCategories.ballCategory
         ball.physicsBody?.contactTestBitMask = PhysicsCategories.switchCategory
@@ -76,6 +92,7 @@ class GameScene: SKScene {
     
     func gameOver() {
         print("Game Over!!!")
+        scoreLabel.text = "Final Score: \(score)"
     }
 }
 
@@ -90,6 +107,7 @@ extension GameScene: SKPhysicsContactDelegate {
                 print(switchState.rawValue)
                 if currentColorIndex == switchState.rawValue {
                     print("Same Color")
+                    updateScoreLabel()
                     self.spawnBall()
                 } else {
                     print("Wrong Color!")
